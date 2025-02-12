@@ -29,7 +29,7 @@ PS. Tutaj jest nasze oryginalne Readme:
 
 Website for the Poland 2.0 conference. This project is built with Next.js, Typescript and tailwindcss
 
-# Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -45,13 +45,13 @@ pnpm dev
 
 Now you can open your browser and go to http://localhost:3000
 
-# Code Structure
+## Code Structure
 
 - All the pages should be inside the `app` folder and should be named as `page.tsx` (where path is the route of the page)
 - All the components should be inside the `_components` folder for a given page (if the component is only used in that page) or inside the `components` folder (if the component is used in multiple pages for reusability)
 - For assets (images, fonts, etc.), use the `assets` folder inside the specific page folder
 
-# Code Style
+## Code Style
 
 - Use `TypeScript` for type checking and better code quality
 - Use `Biome` for code formatting
@@ -59,10 +59,24 @@ Now you can open your browser and go to http://localhost:3000
 - Do not to use 'isMobile' or 'isDesktop' or 'isTablet' in the code. Instead, use `tailwindcss` classes for responsiveness (e.g. `md:block`)
 - For Images use the `ServerImage` and `ClientImage` components. They can be found in the components/image folder. Those wrappers will automatically figure out the image size
 
-# Version Control
+## Version Control
 
 - Always create a new branch for a new feature or bug fix
 - Always create a pull request for the branch and get it reviewed by someone else
 - Don't merge your own pull request
 - Don't push directly to the master branch
 - _DON'T DO FORCE PUSH_
+
+## Docker
+
+To run the project in a docker container, you can use the following commands:
+
+```bash
+# Build the docker image for development environment
+docker build --target dev -t poland2_0_dev .
+docker run -p 3000:3000 -v $(pwd):/app poland2_0_dev
+
+# Build the docker image for production environment
+docker build --target production -t poland2_0 .
+docker run -p 3000:3000 poland2_0
+```

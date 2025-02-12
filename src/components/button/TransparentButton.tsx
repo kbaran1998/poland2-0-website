@@ -1,7 +1,7 @@
 import mergeClassName from '@/lib/mergeClassName';
 import UnstyledButton, { type Props } from './UnstyledButton.tsx';
 
-export default function TransparentButton(props: Props) {
+export default function TransparentButton(props: Readonly<Props>) {
 	return (
 		<UnstyledButton
 			link={props.link}

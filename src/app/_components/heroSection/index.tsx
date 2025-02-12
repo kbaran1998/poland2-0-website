@@ -5,7 +5,7 @@ import { nlSummitHeroImg } from './assets.ts';
 
 export default function HeroSection() {
 	return (
-		<section>
+		<section className="h-[75vh]">
 			<BaseHeroSection
 				description={
 					<p>

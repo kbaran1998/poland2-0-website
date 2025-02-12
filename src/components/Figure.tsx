@@ -13,7 +13,7 @@ interface Props extends HTMLAttributes<HTMLElement> {
 	captionClassName?: string;
 }
 
-export default function Figure(props: Props) {
+export default function Figure(props: Readonly<Props>) {
 	return (
 		<figure
 			className={mergeClassName('group relative flex flex-col items-center overflow-hidden rounded-3xl [user-select:none]', props.className)}
